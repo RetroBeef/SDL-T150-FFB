@@ -625,7 +625,7 @@ static int SDL_SYS_ToDIEFFECT(SDL_Haptic *haptic, DIEFFECT *dest,
     if (src->constant.direction.type == SDL_HAPTIC_STEERING_AXIS) {
         dest->cAxes = 1;
     } else {
-        dest->cAxes = haptic->naxes;
+        dest->cAxes = 2;//haptic->naxes;//quick and dirty hack to make T150 Force Feedback work with all da things :)
     }
     if (dest->cAxes > 0) {
         axes = SDL_malloc(sizeof(DWORD) * dest->cAxes);
